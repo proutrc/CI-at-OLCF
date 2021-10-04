@@ -1,0 +1,32 @@
+variables:
+  SCHEDULER_PARAMETERS: "-J prout-test -t 00:05:00 -p batch -N 2 -A STF007"
+
+stages:
+  - build
+  - test
+ 
+shell-build:
+  stage: build
+  tags: [shell]
+  script:
+    - hostname
+    - id
+    - date
+    - sleep 30
+  after_script:
+    - hostname 
+    - id
+
+slurm-test:
+  stage: test
+  tags: [slurm]
+  script:
+    - hostname
+    - id
+    - date
+    - env | grep SLURM
+    - sleep 30
+  after_script:
+    - hostname 
+    - id
+
