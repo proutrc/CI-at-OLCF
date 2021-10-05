@@ -3,16 +3,15 @@ variables:
 
 stages:
   - build
-#  - test
+  - test
  
 shell-build:
   stage: build
   tags: [shell]
   script:
-    - hostname
-    - id
+    - cd factorial
+    - pwd
     - date
-    - sleep 30
   after_script:
     - hostname 
     - id
