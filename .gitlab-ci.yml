@@ -1,6 +1,6 @@
 variables:
   SCHEDULER_PARAMETERS: "-J prout-test -t 00:05:00 -p batch -N 2 -A STF007"
-  CUSTOM_CI_BUILDS_DIR: "/gpfs/alpine/stf007/scratch/rprout/"
+  CUSTOM_BUILDS_DIR: "/gpfs/alpine/stf007/scratch/rprout/"
 
 stages:
   - build
