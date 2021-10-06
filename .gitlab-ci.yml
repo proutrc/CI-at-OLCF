@@ -13,9 +13,7 @@ shell-build:
     - cd factorial
     - HOSTNAME=`hostname -f`
     - echo $HOSTNAME
-    -  > if [ $HOSTNAME==*spock* ]; then 
-              ./build.sh 
-         fi
+    - if [ $HOSTNAME==*spock* ]; then ./build.sh; fi 
     - date
   after_script:
     - id
