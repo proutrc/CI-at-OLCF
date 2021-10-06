@@ -9,11 +9,13 @@ stages:
 shell-build:
   stage: build
   tags: [shell]
-  before_script:
-    - HOSTNAME=`hostname -f`
   script:
     - cd factorial
-    - if [[ $HOSTNAME==*spock* ]]; then ./build.sh fi
+    - HOSTNAME=`hostname -f`
+    - echo $HOSTNAME
+    -  > if [ $HOSTNAME==*spock* ]; then 
+              ./build.sh 
+         fi
     - date
   after_script:
     - id
