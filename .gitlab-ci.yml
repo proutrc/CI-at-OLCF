@@ -9,12 +9,15 @@ stages:
 shell-build:
   stage: build
   tags: [shell]
+  before_script:
+    - HOSTNAME=`hostname -f`
+  rules:
+    - if: $HOSTNAME==*spock*
   script:
     - cd factorial
-    - pwd
+    - ./build.sh
     - date
   after_script:
-    - hostname 
     - id
   only:
     - summit-ci-app-example
