@@ -11,11 +11,9 @@ shell-build:
   tags: [shell]
   before_script:
     - HOSTNAME=`hostname -f`
-  rules:
-    - if: $HOSTNAME==*spock*
   script:
     - cd factorial
-    - ./build.sh
+    - if [[ $HOSTNAME==*spock* ]]; then ./build.sh fi
     - date
   after_script:
     - id
